@@ -9,7 +9,11 @@ require("dotenv").config();
 
 const PORT = process.env.PORT || 10000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://sns-clone-api.onrender.com",
+  })
+);
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postsRoute);
